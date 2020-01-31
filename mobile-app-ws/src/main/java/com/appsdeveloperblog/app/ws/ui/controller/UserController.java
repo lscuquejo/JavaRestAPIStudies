@@ -40,7 +40,6 @@ public class UserController {
 		BeanUtils.copyProperties(createUser, returnValue);
 		
 		return returnValue;
-
 	}
 	
 	@DeleteMapping

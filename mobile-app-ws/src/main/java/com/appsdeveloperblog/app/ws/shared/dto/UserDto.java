@@ -5,8 +5,15 @@ import java.io.Serializable;
 public class UserDto implements Serializable {
 
 	private static final long serialVersionUID = 4663776507764840612L;
-
 	private long id;
+	private String userId;
+	private String firstName;
+	private String lastName;
+	private String email;
+	private String password;
+	private String encryptedPassword;
+	private String emailVerificationToken;
+	private Boolean emailVerificationStatus = false;
 
 	public long getId() {
 		return id;
@@ -38,6 +45,14 @@ public class UserDto implements Serializable {
 
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
+	}
+	
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public String getPassword() {
@@ -71,12 +86,4 @@ public class UserDto implements Serializable {
 	public void setEmailVerificationStatus(Boolean emailVerificationStatus) {
 		this.emailVerificationStatus = emailVerificationStatus;
 	}
-
-	private String userId;
-	private String firstName;
-	private String lastName;
-	private String password;
-	private String encryptedPassword;
-	private String emailVerificationToken;
-	private Boolean emailVerificationStatus = false;
 }
