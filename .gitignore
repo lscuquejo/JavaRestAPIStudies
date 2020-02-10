@@ -2,3 +2,4 @@
 /.metadata
 ./.metada/
 ./mobile-app-ws/src/main/resources/application.properties
+*.properties
