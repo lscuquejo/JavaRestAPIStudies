@@ -3,3 +3,4 @@
 ./.metada/
 ./mobile-app-ws/src/main/resources/application.properties
 *.properties
+./mobile-app-ws/src/main/resources/
