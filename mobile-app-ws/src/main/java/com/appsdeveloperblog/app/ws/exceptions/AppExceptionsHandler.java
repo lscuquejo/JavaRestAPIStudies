@@ -24,4 +24,14 @@ public class AppExceptionsHandler {
 		
 		return new ResponseEntity<Object>(errorMessage, new HttpHeaders(), Status);
 	}
+	
+	@ExceptionHandler(value = {Exception.class})
+	public ResponseEntity<Object> handleUserServiceException(Exception ex, WebRequest request)
+	{
+		HttpStatus Status = HttpStatus.INTERNAL_SERVER_ERROR;
+		
+		ErrorMessage errorMessage = new ErrorMessage(new Date(), ex.getMessage(), Status.toString());
+		
+		return new ResponseEntity<Object>(errorMessage, new HttpHeaders(), Status);
+	}
 }
