@@ -29,7 +29,8 @@ public class UserController {
 	@Autowired
 	UserService userService;
 	
-	@GetMapping(path="/{id}", 
+	@GetMapping(
+			path="/{id}", 
 			produces = { MediaType.APPLICATION_XML_VALUE , MediaType.APPLICATION_JSON_VALUE } )
 	public UserRest getUser(@PathVariable String id)
 	{
@@ -60,8 +61,8 @@ public class UserController {
 		return returnValue;
 	}
 	
-	@DeleteMapping(path="/{id}", 
-			consumes = { MediaType.APPLICATION_XML_VALUE , MediaType.APPLICATION_JSON_VALUE},
+	@DeleteMapping(
+			path="/{id}", 
 			produces = { MediaType.APPLICATION_XML_VALUE , MediaType.APPLICATION_JSON_VALUE }
 			)
 	public OperationStatusModel deleteUser(@PathVariable String id)
@@ -69,12 +70,16 @@ public class UserController {
 		OperationStatusModel returnValue = new OperationStatusModel();
 		
 		returnValue.setOperationName(RequestOperationName.DELETE.name());
+		
+		userService.deleteUser(id);
+		
 		returnValue.setOperationResult(RequestOperationStatus.SUCCESS.name());
 		
 		return returnValue;
 	}
 	
-	@PutMapping(path="/{id}", 
+	@PutMapping(
+			path="/{id}", 
 			consumes = { MediaType.APPLICATION_XML_VALUE , MediaType.APPLICATION_JSON_VALUE},
 			produces = { MediaType.APPLICATION_XML_VALUE , MediaType.APPLICATION_JSON_VALUE }
 			)
