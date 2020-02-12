@@ -16,7 +16,6 @@ import com.appsdeveloperblog.app.ws.io.repositories.UserRepository;
 import com.appsdeveloperblog.app.ws.service.UserService;
 import com.appsdeveloperblog.app.ws.shared.Utils;
 import com.appsdeveloperblog.app.ws.shared.dto.UserDto;
-import com.appsdeveloperblog.app.ws.ui.model.response.ErrorMessage;
 import com.appsdeveloperblog.app.ws.ui.model.response.ErrorMessages;
 
 @Service
