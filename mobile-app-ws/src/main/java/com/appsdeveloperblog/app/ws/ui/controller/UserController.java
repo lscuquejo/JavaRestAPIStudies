@@ -1,5 +1,7 @@
 package com.appsdeveloperblog.app.ws.ui.controller;
 
+import java.util.ArrayList;
+
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -21,6 +23,8 @@ import com.appsdeveloperblog.app.ws.ui.model.response.ErrorMessages;
 import com.appsdeveloperblog.app.ws.ui.model.response.RequestOperationName;
 import com.appsdeveloperblog.app.ws.ui.model.response.RequestOperationStatus;
 import com.appsdeveloperblog.app.ws.ui.model.response.UserRest;
+
+import antlr.collections.List;
 
 @RestController
 @RequestMapping("users") // http://localhost:8080/users
@@ -94,6 +98,14 @@ public class UserController {
 		
 		UserDto updatedUser = userService.updateUser(id, userDto);
 		BeanUtils.copyProperties(updatedUser, returnValue);
+		
+		return returnValue;
+	}
+	
+	@GetMapping
+	public List <UserRest> getUsers()
+	{
+		List<UserRest> returnValue = new ArrayList<>();
 		
 		return returnValue;
 	}
